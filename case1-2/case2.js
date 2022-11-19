@@ -6,8 +6,6 @@ class OrderItem {
     this.price = price
     this.qty = qty
   }
-  
-  calculatePrice(arr){
-    
-  }
 }
+
+// function 

@@ -52,18 +52,17 @@ export default function Login() {
           width="200"
           className="inline-block bg-[rgba(254,185,19,1)]"
         /> */}
-        <div>
-          <h1 className="text-4xl font-medium mb-10">
-            Selamat Datang di Solusi Perangkat Lunak Farmasi
-          </h1>
-          <h1 className="text-4xl font-medium mb-10">
+        <div className="pt-48 pb-40 pl-20">
+          <h1 className="text-4xl font-medium">Selamat Datang di Solusi</h1>
+          <h1 className="text-4xl font-medium">Perangkat Lunak Farmasi</h1>
+          <h1 className="text-2xl font-medium mb-10">
             Sistem Manajemen Apotek Online
           </h1>
         </div>
-        <div className="max-w-sm mx-auto my-14 bg-white p-8 rounded-xl shadow shadow-slate-300">
-          <h1 className="text-4xl font-medium mb-10">
+          <h1 className="text-xl font-medium text-center">
             Silahkan masuk ke dalam akun anda dan kelola apotek Anda
           </h1>
+        <div className="max-w-sm mx-auto my-2 bg-white p-4 rounded-xl shadow shadow-slate-300">
 
           {/* <div className="my-2">
         <button className="w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150">
@@ -77,10 +76,10 @@ export default function Login() {
       </div>
       <h1 className="font-medium text-lg text-center">Or</h1> */}
 
-          <form action="" className="my-5" onSubmit={submitHandler}>
+          <form action="" className="" onSubmit={submitHandler}>
             <div className="flex flex-col space-y-5">
               <label for="email">
-                <p className="font-medium text-left text-slate-700 pb-2">
+                <p className="text-xl font-medium text-left text-slate-700 pb-2">
                   Email
                 </p>
                 <input
@@ -94,7 +93,7 @@ export default function Login() {
                 />
               </label>
               <label for="password">
-                <p className="font-medium text-left text-slate-700 pb-2">
+                <p className="text-xl font-medium text-left text-slate-700 pb-2">
                   Password
                 </p>
                 <input
@@ -110,7 +109,7 @@ export default function Login() {
               <div className="flex flex-row justify-between"></div>
               <button
                 type="submit"
-                className="w-full py-3 font-bold text-white bg-[rgba(254,185,19,1)] hover:bg-[#fe8513] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
+                className="w-full py-3 font-bold text-white bg-[#016AAB] hover:bg-[#fe8513] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
               >
                 <span>Masuk</span>
                 <svg
@@ -129,17 +128,17 @@ export default function Login() {
                 </svg>
               </button>
             </div>
-            <div>
+            <div className="p-1">
               <h4>
-                Belum memiliki akun?
-                <a href='/register'>Register sekarang</a>
+                Belum Registrasi? Silahkan klik 
+                <a href="/register" className="text-orange-500"> Daftar</a>
               </h4>
             </div>
           </form>
         </div>
-        <footer className="text-slate-500 font-semibold">
+        {/* <footer className="text-slate-500 font-semibold">
           Created by Hafizh
-        </footer>
+        </footer> */}
       </div>
     </>
   );

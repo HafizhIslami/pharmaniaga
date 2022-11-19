@@ -5,6 +5,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import ProtectedRouteLogin from "./components/ProtectedRouteLogin";
 import RegisterFacility from "./views/RegisterFacility";
 import Register from "./views/Register";
+import SideBar from "./components/SideBar";
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
           path="/"
           element={
             // <ProtectedRoute>
-            <Dashboard />
+            <SideBar />
             // </ProtectedRoute>
           }
         />

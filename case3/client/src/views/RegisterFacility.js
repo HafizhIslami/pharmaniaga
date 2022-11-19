@@ -6,12 +6,12 @@ export default function RegisterFacility() {
   const [register, setRegister] = useState({
     businessField: "",
     companyName: "",
-    companyNPWP: "",
+    companyNPWP: 0,
     address: "",
     province: "",
     city: "",
     district: "",
-    postalCode: "",
+    postalCode: 0,
     nib: "",
   });
 
