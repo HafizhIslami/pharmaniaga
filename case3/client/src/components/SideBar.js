@@ -5,8 +5,9 @@ import Dashboard from "../views/Dashboard";
 export default function SideBar() {
   const navigate = useNavigate();
 
-  function logout() {
-    localStorage.removeItem("accessToken");
+  function logout(e) {
+    e.preventDefault()
+    localStorage.removeItem("access_token");
     navigate("/login");
   }
 
@@ -78,7 +79,7 @@ export default function SideBar() {
                       <a>Settings</a>
                     </li>
                     <li>
-                      <a>Logout</a>
+                      <button onClick={logout}>Logout</button>
                     </li>
                   </ul>
                 </div>
@@ -112,7 +113,7 @@ export default function SideBar() {
                   <a>Settings</a>
                 </li>
                 <li>
-                  <a onClick={logout()}>Logout</a>
+                  <a onClick={logout}>Logout</a>
                 </li>
               </ul>
             </div>

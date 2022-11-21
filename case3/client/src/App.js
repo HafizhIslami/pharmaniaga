@@ -14,33 +14,33 @@ function App() {
         <Route
           path="/login"
           element={
-            // <ProtectedRouteLogin>
-            <Login />
-            // </ProtectedRouteLogin>
+            <ProtectedRouteLogin>
+              <Login />
+            </ProtectedRouteLogin>
           }
         />
         <Route
           path="/"
           element={
-            // <ProtectedRoute>
-            <SideBar />
-            // </ProtectedRoute>
+            <ProtectedRoute>
+              <SideBar />
+            </ProtectedRoute>
           }
         />
         <Route
           path="/register"
           element={
-            // <ProtectedRoute>
-            <RegisterFacility />
-            // </ProtectedRoute>
+            <ProtectedRouteLogin>
+              <RegisterFacility />
+            </ProtectedRouteLogin>
           }
         />
         <Route
           path="/account"
           element={
-            // <ProtectedRoute>
-            <Register />
-            // </ProtectedRoute>
+            <ProtectedRouteLogin>
+              <Register />
+            </ProtectedRouteLogin>
           }
         />
       </Routes>

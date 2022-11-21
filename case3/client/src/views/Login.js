@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { loginUser } from "../stores/actions/usersAction";
-// import genji from "../assets/genji-sushi-yellow.png";
+import bg from "../assets/vector.jpg";
 
 export default function Login() {
   let navigate = useNavigate();
@@ -25,9 +27,26 @@ export default function Login() {
 
   function submitHandler(event) {
     event.preventDefault();
+    const data = loginInput;
+    if (
+      loginInput.email === "trial@mail.com" &&
+      loginInput.password === "qwerty123"
+    ) {
+      localStorage.setItem('access_token','iniaccesstoken')
+      navigate("/");
 
-    navigate("/");
-    // const data = loginInput;
+    } else
+      toast.error("Wrong email or password", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+
     // dispatch(loginUser(data))
     //   .then((data) => {
     //     localStorage.setItem("access_token", data.access_token);
@@ -46,7 +65,22 @@ export default function Login() {
 
   return (
     <>
-      <div>
+      <div
+        className="min-h-screen max-h-min"
+        style={{ backgroundImage: `url(${bg})`, backgroundSize: "contain" }}
+        data-theme="false"
+      >
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
         {/* <img
           src={genji}
           width="200"
@@ -59,11 +93,10 @@ export default function Login() {
             Sistem Manajemen Apotek Online
           </h1>
         </div>
-          <h1 className="text-xl font-medium text-center">
-            Silahkan masuk ke dalam akun anda dan kelola apotek Anda
-          </h1>
+        <h1 className="text-xl font-medium text-center">
+          Silahkan masuk ke dalam akun anda dan kelola apotek Anda
+        </h1>
         <div className="max-w-sm mx-auto my-2 bg-white p-4 rounded-xl shadow shadow-slate-300">
-
           {/* <div className="my-2">
         <button className="w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150">
           <img
@@ -109,7 +142,7 @@ export default function Login() {
               <div className="flex flex-row justify-between"></div>
               <button
                 type="submit"
-                className="w-full py-3 font-bold text-white bg-[#016AAB] hover:bg-[#fe8513] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
+                className="w-full py-3 font-bold text-white bg-[#016AAB] hover:bg-[#2e87be] rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center"
               >
                 <span>Masuk</span>
                 <svg
@@ -130,8 +163,11 @@ export default function Login() {
             </div>
             <div className="p-1">
               <h4>
-                Belum Registrasi? Silahkan klik 
-                <a href="/register" className="text-orange-500"> Daftar</a>
+                Belum Registrasi? Silahkan klik
+                <a href="/register" className="text-orange-500">
+                  {" "}
+                  Daftar
+                </a>
               </h4>
             </div>
           </form>
